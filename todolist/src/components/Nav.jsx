@@ -1,7 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { authService } from '../firebase/fbInstance';
 
-const Nav = () => {
+const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(authService);
+      setIsLoggedIn(false);
+      navigate('/');
+    } catch (error) {
+      console.error("로그아웃 에러:", error);
+    }
+  };
+
   return (
     <nav className="bg-gradient-to-r from-blue-400 to-green-400 p-4 fixed w-full top-0 z-10 m-0">
       <div className="flex justify-between items-center w-full px-4">
@@ -16,16 +30,24 @@ const Nav = () => {
             캘린더
           </Link>
           <Link to="/board" className="text-white text-xl font-bold">
-            게시판
+            나의 일기
           </Link>
         </div>
         <div className="flex items-center space-x-8">
-          <Link to="/signup" className="text-white text-xl font-bold">
-            회원가입
-          </Link>
-          <Link to="/login" className="text-white text-xl font-bold">
-            로그인
-          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="text-white text-xl font-bold">
+              로그아웃
+            </button>
+          ) : (
+            <>
+              <Link to="/signup" className="text-white text-xl font-bold">
+                회원가입
+              </Link>
+              <Link to="/login" className="text-white text-xl font-bold">
+                로그인
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
