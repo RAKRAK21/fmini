@@ -30,7 +30,9 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
             캘린더
           </Link>
           <Link to="/board" className="text-white text-xl font-bold">
+
             일기장
+
           </Link>
         </div>
         <div className="flex items-center space-x-8">

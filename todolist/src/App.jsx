@@ -84,7 +84,9 @@ import { authService } from './firebase/fbInstance';
 import './index.css';
 import Todolist from './components/Todolist';
 import Calendar from './components/calendar/Calendar';
+
 import Board from './components/board/Board';
+
 import Nav from './components/Nav';
 import Auth from './firebase/Auth';
 
