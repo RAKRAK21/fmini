@@ -34,7 +34,7 @@ const Auth = ({ setIsLoggedIn, newAccount = false }) => {
             setIsLoggedIn(true);
             setTimeout(() => {
                 navigate('/');
-            }, 1500);
+            }, 1000);
         } catch (error) {
             setError(error.message);
         }

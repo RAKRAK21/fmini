@@ -10,6 +10,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "figlet": "^1.7.0",
+    "firebase": "^10.12.5",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "react": "^18.3.1",
@@ -18,7 +19,7 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
-    "vercel": "^35.2.2",
+    "vercel": "^35.2.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
